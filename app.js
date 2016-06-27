@@ -45,11 +45,15 @@ function getAmount(theClaim) {
 	var type = theClaim.visitType;
 	var percentCovered = getPercent(theClaim);
 	var totalPayedOut = percentCovered * totalCost;
-	console.log("Paid out $" + totalPayedOut + " for " + type);
+	var paymentMessage = "Paid out $" + totalPayedOut + " for " + type + "\n \r";
+	console.log(paymentMessage);
+	return paymentMessage;
 };
 
-getAmount(claim1);
-getAmount(claim2);
-getAmount(claim3);
-getAmount(claim4);
-getAmount(claim5);
+
+//Writing the result of all this to the DOM
+document.write("<pre>" + getAmount(claim1),
+getAmount(claim2) +
+getAmount(claim3) +
+getAmount(claim4) +
+getAmount(claim5) + "</pre>");
